@@ -1,0 +1,51 @@
+//
+//  ViewController.swift
+//  iOS_KOACH
+//
+//  Created by Matthew Shin on 2019-08-02.
+//  Copyright © 2019 KOACH. All rights reserved.
+//
+
+import UIKit
+import SideMenu
+
+class PlayerViewController: UIViewController {
+    
+    var playerMenu: SideMenuNavigationController?
+    
+    @IBAction func didTapPlayerMenu() {
+        present(playerMenu!, animated: true)
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        playerMenu = SideMenuNavigationController(rootViewController: PlayerMenuController())
+        playerMenu?.leftSide = true
+        SideMenuManager.default.leftMenuNavigationController = playerMenu
+        SideMenuManager.default.addPanGestureToPresent(toView: self.view)
+        
+    }
+}
+
+class PlayerMenuController: UITableViewController {
+    var players = ["Matthew", "Jay", "Hoon"]
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "playerCell")
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return players.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "playerCell", for: indexPath)
+        cell.textLabel?.text = players[indexPath.row]
+        return cell
+    }
+    
+    
+}
+

@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  iOS_KOACH
 //
-//  Created by Minsoo Matthew Shin on 2019-08-02.
+//  Created by Matthew Shin on 2019-08-02.
 //  Copyright © 2019 KOACH. All rights reserved.
 //
 
