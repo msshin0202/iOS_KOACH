@@ -1,0 +1,6 @@
+framework module Pods_iOS_KOACH {
+  umbrella header "Pods-iOS_KOACH-umbrella.h"
+
+  export *
+  module * { export * }
+}
