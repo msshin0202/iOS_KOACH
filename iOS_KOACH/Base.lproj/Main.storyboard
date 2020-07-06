@@ -11,7 +11,6 @@
         <!--Player View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="PlayerViewController" customModule="iOS_KOACH" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -23,17 +22,74 @@
                         <barButtonItem key="leftBarButtonItem" title="Players" id="R5u-Ue-wcM">
                             <connections>
                                 <action selector="didTapPlayerMenu" destination="BYZ-38-t0r" id="4JN-Fz-j7f"/>
+                                <segue destination="6Ch-kH-PxJ" kind="presentation" id="zP4-mw-khQ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="593" y="9"/>
+        </scene>
+        <!--Player List-->
+        <scene sceneID="lZP-fX-J9a">
+            <objects>
+                <tableViewController id="rda-xF-p3k" customClass="PlayerMenuController" customModule="iOS_KOACH" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="A9z-V5-psL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="HrW-2b-o1t" userLabel="Add Player Button">
+                            <rect key="frame" x="0.0" y="99.5" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Add Player"/>
+                            <connections>
+                                <action selector="addPlayerButtonPressed:" destination="rda-xF-p3k" eventType="touchUpInside" id="JMT-z8-egp"/>
+                            </connections>
+                        </button>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PlayerCell" id="vwV-qQ-Thy">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vwV-qQ-Thy" id="wFF-IY-lmD">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="rda-xF-p3k" id="0Vv-mR-zAR"/>
+                            <outlet property="delegate" destination="rda-xF-p3k" id="gdB-3Y-Kqo"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Player List" id="joA-wH-3eW"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xm6-92-bja" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1500" y="-753"/>
+        </scene>
+        <!--Side Menu Navigation Controller-->
+        <scene sceneID="I9p-TL-Hns">
+            <objects>
+                <navigationController id="6Ch-kH-PxJ" customClass="SideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wWJ-uq-xac">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="leftSide" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="rda-xF-p3k" kind="relationship" relationship="rootViewController" id="OQ9-jV-g02"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XAl-ZS-4P7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="583" y="-753"/>
         </scene>
         <!--Settings-->
         <scene sceneID="pP6-xR-eyn">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bPm-Oq-Agx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="7md-BO-DB5" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="V1f-qB-Klj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -43,6 +99,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" id="vlh-0r-ZxD"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bPm-Oq-Agx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-497" y="1496"/>
         </scene>
