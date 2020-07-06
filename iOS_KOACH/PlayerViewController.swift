@@ -25,16 +25,20 @@ class PlayerViewController: UIViewController {
 }
 
 class PlayerMenuController: UITableViewController {
-    var players = ["Matthew", "Jay", "Hoon"]
-    
+    var players: Results<Player>!
+    let realm = try! Realm()
+
     @IBAction func addPlayerButtonPressed(_ sender: UIButton) {
         
         var textField = UITextField()
+    
         
         let alert = UIAlertController(title: "Add New Player", message: "Enter the name of the player", preferredStyle: .alert)
         let addAction = UIAlertAction(title: "Add Player", style: .default) { (addAction) in
-            self.players.append(textField.text!)
-            self.tableView.reloadData()
+            
+            let newPlayer = Player()
+            newPlayer.name = textField.text!
+            self.savePlayer(player: newPlayer)
         }
         
         alert.addTextField { (alertTextField) in
@@ -49,6 +53,8 @@ class PlayerMenuController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "playerCell")
+        loadPlayers()
+        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -57,10 +63,26 @@ class PlayerMenuController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "playerCell", for: indexPath)
-        cell.textLabel?.text = players[indexPath.row]
+        cell.textLabel?.text = players[indexPath.row].name
         return cell
     }
     
+    // MARK: Helper Functions
+    
+    private func savePlayer(player: Player) {
+        do {
+            try realm.write {
+                realm.add(player)
+            }
+        } catch {
+            
+        }
+    }
+    
+    private func loadPlayers() {
+        players = realm.objects(Player.self)
+        tableView.reloadData()
+    }
     
     
     

@@ -17,6 +17,9 @@
 		CC22F80622F4DEE30025E662 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC22F80422F4DEE30025E662 /* LaunchScreen.storyboard */; };
 		CC22F81122F4DEE30025E662 /* iOS_KOACHTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC22F81022F4DEE30025E662 /* iOS_KOACHTests.swift */; };
 		CC22F81C22F4DEE30025E662 /* iOS_KOACHUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC22F81B22F4DEE30025E662 /* iOS_KOACHUITests.swift */; };
+		CCE5A0EC24B3E685003C5F1D /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE5A0EB24B3E685003C5F1D /* Team.swift */; };
+		CCE5A0EE24B3E69B003C5F1D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE5A0ED24B3E69B003C5F1D /* User.swift */; };
+		CCE5A0F024B3E6A6003C5F1D /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE5A0EF24B3E6A6003C5F1D /* Player.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +62,9 @@
 		CC22F81722F4DEE30025E662 /* iOS_KOACHUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOS_KOACHUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC22F81B22F4DEE30025E662 /* iOS_KOACHUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_KOACHUITests.swift; sourceTree = "<group>"; };
 		CC22F81D22F4DEE30025E662 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CCE5A0EB24B3E685003C5F1D /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		CCE5A0ED24B3E69B003C5F1D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CCE5A0EF24B3E6A6003C5F1D /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				CC22F7FA22F4DEE20025E662 /* iOS_KOACH */,
+				CCE5A0E824B3E294003C5F1D /* Data Model */,
 				CC22F80F22F4DEE30025E662 /* iOS_KOACHTests */,
 				CC22F81A22F4DEE30025E662 /* iOS_KOACHUITests */,
 				CC22F7F922F4DEE20025E662 /* Products */,
@@ -153,6 +160,16 @@
 				CC22F81D22F4DEE30025E662 /* Info.plist */,
 			);
 			path = iOS_KOACHUITests;
+			sourceTree = "<group>";
+		};
+		CCE5A0E824B3E294003C5F1D /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				CCE5A0ED24B3E69B003C5F1D /* User.swift */,
+				CCE5A0EB24B3E685003C5F1D /* Team.swift */,
+				CCE5A0EF24B3E6A6003C5F1D /* Player.swift */,
+			);
+			path = "Data Model";
 			sourceTree = "<group>";
 		};
 		FFA58AD4925698183540338A /* Frameworks */ = {
@@ -404,7 +421,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCE5A0EE24B3E69B003C5F1D /* User.swift in Sources */,
+				CCE5A0EC24B3E685003C5F1D /* Team.swift in Sources */,
 				CC22F7FE22F4DEE20025E662 /* PlayerViewController.swift in Sources */,
+				CCE5A0F024B3E6A6003C5F1D /* Player.swift in Sources */,
 				CC22F7FC22F4DEE20025E662 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
