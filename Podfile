@@ -17,5 +17,6 @@ target 'iOS_KOACH' do
   end
   
   pod 'SideMenu'
+  pod 'RealmSwift'
 
 end
